@@ -1,1 +1,1053 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1877f2">
+<title>TEAMBOSSCJ Social</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f0f2f5;
+    color:#050505;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:60px;
+    background:#ffffff;
+    border-bottom:1px solid #ddd;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 18px;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:800;
+    color:#1877f2;
+    letter-spacing:-1px;
+}
+
+.search{
+    flex:1;
+    max-width:400px;
+    margin:0 20px;
+}
+
+.search input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:#f0f2f5;
+    border-radius:25px;
+    padding:11px 18px;
+    font-size:15px;
+}
+
+.header-icons{
+    display:flex;
+    gap:9px;
+}
+
+.icon-btn{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#f0f2f5;
+    cursor:pointer;
+    font-size:19px;
+}
+
+.icon-btn:hover{
+    background:#e4e6eb;
+}
+
+/* ================= MAIN ================= */
+
+.main{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:250px 1fr 250px;
+    gap:20px;
+    padding:20px 15px 80px;
+}
+
+/* ================= SIDEBARS ================= */
+
+.sidebar,
+.rightbar{
+    position:sticky;
+    top:80px;
+    height:max-content;
+}
+
+.menu-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 10px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.menu-item:hover{
+    background:#e4e6eb;
+}
+
+.menu-icon{
+    width:35px;
+    text-align:center;
+    font-size:22px;
+}
+
+/* ================= STORIES ================= */
+
+.stories{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding-bottom:10px;
+}
+
+.stories::-webkit-scrollbar{
+    display:none;
+}
+
+.story{
+    min-width:110px;
+    height:180px;
+    border-radius:12px;
+    overflow:hidden;
+    position:relative;
+    background:linear-gradient(145deg,#1877f2,#8b5cf6);
+    cursor:pointer;
+    box-shadow:0 1px 3px #aaa;
+}
+
+.story:first-child{
+    background:#fff;
+}
+
+.story-photo{
+    width:100%;
+    height:135px;
+    object-fit:cover;
+}
+
+.story-name{
+    position:absolute;
+    bottom:8px;
+    left:8px;
+    right:5px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.add-story{
+    position:absolute;
+    bottom:34px;
+    left:38px;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#1877f2;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    border:4px solid white;
+}
+
+/* ================= CREATE POST ================= */
+
+.card{
+    background:#fff;
+    border-radius:10px;
+    margin-bottom:15px;
+    box-shadow:0 1px 2px rgba(0,0,0,.12);
+}
+
+.create-post{
+    padding:15px;
+}
+
+.create-top{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#ddd;
+}
+
+.post-input{
+    flex:1;
+    background:#f0f2f5;
+    border:none;
+    border-radius:25px;
+    padding:12px 16px;
+    color:#65676b;
+    cursor:pointer;
+}
+
+.post-actions{
+    display:flex;
+    justify-content:space-around;
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid #ddd;
+}
+
+.post-action{
+    border:none;
+    background:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    color:#65676b;
+}
+
+.post-action:hover{
+    background:#f0f2f5;
+}
+
+/* ================= POST ================= */
+
+.post{
+    padding:15px;
+}
+
+.post-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.post-user{
+    font-weight:700;
+}
+
+.post-time{
+    font-size:12px;
+    color:#65676b;
+    margin-top:3px;
+}
+
+.more{
+    margin-left:auto;
+    border:none;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.post-text{
+    margin:15px 0;
+    line-height:1.5;
+}
+
+.post-image{
+    width:100%;
+    max-height:550px;
+    object-fit:cover;
+    border-radius:8px;
+    display:block;
+}
+
+.post-stats{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 3px;
+    color:#65676b;
+    font-size:14px;
+}
+
+.post-buttons{
+    display:flex;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+
+.post-buttons button{
+    flex:1;
+    padding:11px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    color:#65676b;
+}
+
+.post-buttons button:hover{
+    background:#f0f2f5;
+}
+
+.post-buttons button.liked{
+    color:#1877f2;
+}
+
+/* ================= COMMENTS ================= */
+
+.comments{
+    margin-top:12px;
+}
+
+.comment{
+    background:#f0f2f5;
+    padding:9px 12px;
+    border-radius:15px;
+    margin-top:7px;
+    font-size:14px;
+}
+
+.comment-input{
+    display:flex;
+    gap:8px;
+    margin-top:10px;
+}
+
+.comment-input input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:#f0f2f5;
+    border-radius:20px;
+    padding:10px 14px;
+}
+
+.comment-input button{
+    border:none;
+    border-radius:50%;
+    width:38px;
+    background:#1877f2;
+    color:#fff;
+    cursor:pointer;
+}
+
+/* ================= RIGHTBAR ================= */
+
+.right-title{
+    font-size:17px;
+    color:#65676b;
+    margin-bottom:12px;
+    font-weight:bold;
+}
+
+.contact{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px;
+    border-radius:8px;
+}
+
+.contact:hover{
+    background:#e4e6eb;
+}
+
+.online{
+    position:relative;
+}
+
+.online::after{
+    content:"";
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:#31a24c;
+    border:2px solid white;
+    border-radius:50%;
+    bottom:0;
+    right:0;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:2000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:500px;
+    background:white;
+    border-radius:12px;
+    padding:20px;
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.close{
+    border:none;
+    background:#f0f2f5;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+}
+
+#postText{
+    width:100%;
+    min-height:150px;
+    resize:none;
+    border:none;
+    outline:none;
+    font-size:18px;
+    padding:10px;
+}
+
+.publish{
+    width:100%;
+    border:none;
+    padding:12px;
+    border-radius:7px;
+    background:#1877f2;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= MOBILE NAV ================= */
+
+.mobile-nav{
+    display:none;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:60px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    z-index:1500;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.mobile-nav button{
+    border:none;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .main{
+        grid-template-columns:1fr 220px;
+    }
+
+    .sidebar{
+        display:none;
+    }
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:0 10px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .search{
+        margin:0 8px;
+    }
+
+    .header-icons{
+        display:none;
+    }
+
+    .main{
+        display:block;
+        padding:10px 8px 75px;
+    }
+
+    .rightbar{
+        display:none;
+    }
+
+    .card{
+        border-radius:8px;
+    }
+
+    .stories{
+        margin-bottom:10px;
+    }
+
+    .story{
+        min-width:100px;
+        height:165px;
+    }
+
+    .story-photo{
+        height:122px;
+    }
+
+    .mobile-nav{
+        display:flex;
+    }
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark{
+    background:#18191a;
+    color:#e4e6eb;
+}
+
+body.dark .header,
+body.dark .card,
+body.dark .mobile-nav,
+body.dark .modal-box{
+    background:#242526;
+    color:#e4e6eb;
+}
+
+body.dark .search input,
+body.dark .post-input,
+body.dark .comment-input input,
+body.dark .comment{
+    background:#3a3b3c;
+    color:#e4e6eb;
+}
+
+body.dark .icon-btn,
+body.dark .close{
+    background:#3a3b3c;
+    color:#fff;
+}
+
+body.dark .menu-item:hover,
+body.dark .post-action:hover,
+body.dark .post-buttons button:hover{
+    background:#3a3b3c;
+}
+
+body.dark .post-buttons,
+body.dark .post-actions{
+    border-color:#3e4042;
+}
+
+body.dark .post-buttons button,
+body.dark .post-action{
+    color:#b0b3b8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">TEAMBOSSCJ</div>
+
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="Search TEAMBOSSCJ">
+    </div>
+
+    <div class="header-icons">
+        <button class="icon-btn" onclick="toggleDarkMode()">🌙</button>
+        <button class="icon-btn" onclick="showNotification()">🔔</button>
+        <button class="icon-btn">💬</button>
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+    <!-- LEFT SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="menu-item">
+            <div class="menu-icon">👤</div>
+            <span>Christ John</span>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-icon">🏠</div>
+            <span>Home</span>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-icon">👥</div>
+            <span>Friends</span>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-icon">💬</div>
+            <span>Messages</span>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-icon">🔔</div>
+            <span>Notifications</span>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-icon">⚙️</div>
+            <span>Settings</span>
+        </div>
+
+    </aside>
+
+
+    <!-- FEED -->
+
+    <section>
+
+        <!-- STORIES -->
+
+        <div class="stories">
+
+            <div class="story" onclick="openPostModal()">
+                <img
+                    class="story-photo"
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400"
+                    alt="Profile">
+                <div class="add-story">+</div>
+                <div class="story-name">Create Story</div>
+            </div>
+
+            <div class="story">
+                <img
+                    class="story-photo"
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"
+                    alt="Story">
+                <div class="story-name">John</div>
+            </div>
+
+            <div class="story">
+                <img
+                    class="story-photo"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+                    alt="Story">
+                <div class="story-name">Maria</div>
+            </div>
+
+            <div class="story">
+                <img
+                    class="story-photo"
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400"
+                    alt="Story">
+                <div class="story-name">James</div>
+            </div>
+
+        </div>
+
+
+        <!-- CREATE POST -->
+
+        <div class="card create-post">
+
+            <div class="create-top">
+
+                <img
+                    class="avatar"
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200"
+                    alt="Profile">
+
+                <button class="post-input" onclick="openPostModal()">
+                    What's on your mind?
+                </button>
+
+            </div>
+
+            <div class="post-actions">
+
+                <button class="post-action" onclick="openPostModal()">
+                    📹 Live
+                </button>
+
+                <button class="post-action" onclick="openPostModal()">
+                    🖼️ Photo
+                </button>
+
+                <button class="post-action" onclick="openPostModal()">
+                    😊 Feeling
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- POST 1 -->
+
+        <article class="card post">
+
+            <div class="post-header">
+
+                <img
+                    class="avatar"
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200"
+                    alt="Christ John">
+
+                <div>
+                    <div class="post-user">Christ John M. Ocaña</div>
+                    <div class="post-time">Just now · 🌎</div>
+                </div>
+
+                <button class="more">•••</button>
+
+            </div>
+
+            <div class="post-text">
+                Welcome to <b>TEAMBOSSCJ Social</b>! 🎉
+                <br><br>
+                This is my own social-media website.
+                Feel free to connect, react and leave a comment. ❤️
+            </div>
+
+            <div class="post-stats">
+                <span class="likes-count">👍 12</span>
+                <span>3 comments · 2 shares</span>
+            </div>
+
+            <div class="post-buttons">
+
+                <button onclick="likePost(this)">
+                    👍 Like
+                </button>
+
+                <button onclick="focusComment(this)">
+                    💬 Comment
+                </button>
+
+                <button onclick="sharePost()">
+                    ↗️ Share
+                </button>
+
+            </div>
+
+            <div class="comments">
+
+                <div class="comment">
+                    <b>Maria</b> Nice website! 🔥
+                </div>
+
+                <div class="comment-input">
+                    <input type="text" placeholder="Write a comment...">
+                    <button onclick="addComment(this)">➤</button>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- POST 2 -->
+
+        <article class="card post">
+
+            <div class="post-header">
+
+                <img
+                    class="avatar"
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200"
+                    alt="User">
+
+                <div>
+                    <div class="post-user">TEAMBOSSCJ</div>
+                    <div class="post-time">2 hrs · 🌎</div>
+                </div>
+
+                <button class="more">•••</button>
+
+            </div>
+
+            <div class="post-text">
+                Building something awesome. 🚀
+            </div>
+
+            <img
+                class="post-image"
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000"
+                alt="Technology">
+
+            <div class="post-stats">
+                <span class="likes-count">👍 25</span>
+                <span>8 comments · 5 shares</span>
+            </div>
+
+            <div class="post-buttons">
+
+                <button onclick="likePost(this)">
+                    👍 Like
+                </button>
+
+                <button onclick="focusComment(this)">
+                    💬 Comment
+                </button>
+
+                <button onclick="sharePost()">
+                    ↗️ Share
+                </button>
+
+            </div>
+
+            <div class="comments">
+
+                <div class="comment-input">
+                    <input type="text" placeholder="Write a comment...">
+                    <button onclick="addComment(this)">➤</button>
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- RIGHT SIDEBAR -->
+
+    <aside class="rightbar">
+
+        <div class="right-title">Contacts</div>
+
+        <div class="contact">
+            <div class="online">
+                <img class="avatar"
+                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100">
+            </div>
+            <span>Maria</span>
+        </div>
+
+        <div class="contact">
+            <div class="online">
+                <img class="avatar"
+                     src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100">
+            </div>
+            <span>James</span>
+        </div>
+
+        <div class="contact">
+            <div class="online">
+                <img class="avatar"
+                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100">
+            </div>
+            <span>John</span>
+        </div>
+
+    </aside>
+
+</main>
+
+
+<!-- ================= MOBILE NAV ================= -->
+
+<nav class="mobile-nav">
+
+    <button>🏠</button>
+    <button>👥</button>
+    <button onclick="openPostModal()">➕</button>
+    <button>💬</button>
+    <button>🔔</button>
+
+</nav>
+
+
+<!-- ================= CREATE POST MODAL ================= -->
+
+<div class="modal" id="postModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>Create Post</h2>
+
+            <button class="close" onclick="closePostModal()">
+                ×
+            </button>
+
+        </div>
+
+        <textarea
+            id="postText"
+            placeholder="What's on your mind?"></textarea>
+
+        <button class="publish" onclick="publishPost()">
+            Post
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ================= POST MODAL ================= */
+
+function openPostModal(){
+    document.getElementById("postModal").classList.add("show");
+    document.getElementById("postText").focus();
+}
+
+function closePostModal(){
+    document.getElementById("postModal").classList.remove("show");
+    document.getElementById("postText").value="";
+}
+
+document.getElementById("postModal").addEventListener("click",function(e){
+    if(e.target === this){
+        closePostModal();
+    }
+});
+
+
+/* ================= PUBLISH POST ================= */
+
+function publishPost(){
+
+    const text =
+        document.getElementById("postText").value.trim();
+
+    if(!text){
+        alert("Please write something first.");
+        return;
+    }
+
+    const post = document.createElement("article");
+
+    post.className = "card post";
+
+    post.innerHTML = `
+
+        <div class="post-header">
+
+            <img
+                class="avatar"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200">
+
+            <div>
+                <div class="post-user">
+                    Christ John M. Ocaña
+                </div>
+
+                <div class="post-time">
+                    Just now · 🌎
+                </div>
+            </div>
+
+            <button class="more">
+                •••
+            </button>
+
+        </div>
+
+        <div class="post-text">
+            ${escapeHTML(text).replace(/\n/g,"<br>")}
+        </div>
+
+        <div class="post-stats">
+            <span class="likes-count">
+                👍 0
+            </span>
+
+            <span>
+                0 comments · 0 shares
+            </span>
+        </div>
+
+        <div class="post-buttons">
+
+            <button onclick="likePost(this)">
+                👍 Like
+            </button>
+
+            <button onclick="focusComment(this)">
+                💬 Comment
+            </button>
+
+            <button onclick="sharePost()">
+                ↗️ Share
+            </button>
+
+        </div>
+
+        <div class="comments">
+
+            <div class="comment-input">
+
+                <input
+                    type="text"
+                    placeholder="Write a comment...">
+
+                <button onclick="addComment(this)">
+                    ➤
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    const feed = document.querySelector(".main section");
+
+    feed.insertBefore(
+        post,
+        feed.children[1]
+    );
+
+    closePostModal();
+}
+
+
+/* ================= ESCAPE HTML ================= */
+
+function escap
